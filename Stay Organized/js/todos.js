@@ -49,9 +49,17 @@ document.addEventListener('DOMContentLoaded', function () {
           checkbox.checked = getCheckboxState(userId, task.id); // Retrieve checkbox state from localStorage
           checkbox.addEventListener('change', function () {
             updateCheckboxState(userId, task.id, this.checked); // Update checkbox state in localStorage
+            updateCheckboxStateInTodoDetails(task.id, this.checked); // Update checkbox state in todo_details.html
           });
+
+          const taskLink = document.createElement('a');
+          taskLink.href = `todo_details.html?id=${task.id}`; // Set the hyperlink URL
+          taskLink.textContent = task.description; // Set the task description as the link text
+
           taskItem.appendChild(checkbox);
-          taskItem.appendChild(document.createTextNode(`${task.description} - ${task.deadline}`));
+          taskItem.appendChild(document.createTextNode(' - '));
+          taskItem.appendChild(taskLink);
+          taskItem.appendChild(document.createTextNode(` - ${task.deadline}`));
           taskList.appendChild(taskItem);
         });
       })
@@ -71,5 +79,20 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateCheckboxState(userId, taskId, checked) {
     const storageKey = `checkbox_${userId}_${taskId}`;
     localStorage.setItem(storageKey, checked);
+  }
+
+  // Update the state of a checkbox in todo_details.html
+  function updateCheckboxStateInTodoDetails(taskId, checked) {
+    const todoDetailsFrame = document.getElementById('todoDetailsFrame');
+    if (todoDetailsFrame) {
+      todoDetailsFrame.contentWindow.postMessage(
+        {
+          type: 'checkboxState',
+          taskId: taskId,
+          checked: checked
+        },
+        '*'
+      );
+    }
   }
 });

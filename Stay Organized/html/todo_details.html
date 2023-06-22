@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stay Organized - To-Do Details</title>
+  <title>Stay Organized - Todo Details</title>
   <!-- Add your CSS and JavaScript file references here -->
   <link rel="stylesheet" href="../css/style.css">
   <!-- Add Bootstrap CSS link here -->
@@ -11,7 +11,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="../html/index.html">Stay Organized</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,20 +20,21 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="todos.html">To-Do Tasks</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <h1>To-Do Details</h1>
-  <div id="todoDetails">
-    <!-- To-Do details will be populated dynamically using JavaScript -->
+  <div class="container mt-4">
+    <h2>Todo Details</h2>
+    <div id="todoDetails">
+      <iframe id="todoDetailsFrame" src="todo_details.html" frameborder="0"></iframe>
+    </div>
   </div>
-  <button id="markCompletedBtn">Mark Completed</button>
   <!-- Add your content here -->
-  <script src="js/todo_details.js"></script> <!-- Your JavaScript file -->
+  <script src="../js/todo_details.js"></script> <!-- Your JavaScript file -->
   <!-- Add Bootstrap JS scripts here -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
