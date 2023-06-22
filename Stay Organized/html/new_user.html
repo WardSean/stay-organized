@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stay Organized - New User Registration</title>
+  <!-- Add your CSS and JavaScript file references here -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Add Bootstrap CSS link here -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="../html/index.html">Stay Organized</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="todos.html">To-Do Tasks</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>New User Registration</h1>
+  <form id="newUserForm">
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput">
+    <label for="usernameInput">Username:</label>
+    <input type="text" id="usernameInput">
+    <label for="passwordInput">Password:</label>
+    <input type="password" id="passwordInput">
+    <label for="confirmPasswordInput">Confirm Password:</label>
+    <input type="password" id="confirmPasswordInput">
+    <p id="passwordMismatchError" style="display: none; color: red;">Passwords must match.</p>
+    <button id="registerBtn">Register</button>
+  </form>
+  <!-- Add your content here -->
+  <script src="../js/new_user.js"></script> <!-- Your JavaScript file -->
+  <!-- Add Bootstrap JS scripts here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
